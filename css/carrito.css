@@ -1,0 +1,89 @@
+h1{
+    padding: 10px;
+}
+.container {
+    display: flex;
+    max-width: 1000px;
+    margin: 20px auto;
+    gap: 20px;
+}
+/* Lista productos */
+.productos {
+    flex: 2;
+    background: #fff;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+.producto {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+.producto img {
+    width: 90px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+.info {
+    flex: 1;
+    margin-left: 15px;
+}
+.titulo {
+    font-weight: bold;
+    font-size: 16px;
+}
+.precio {
+    margin-top: 5px;
+    color: #333;
+}
+.cantidad {
+    width: 50px;
+    text-align: center;
+    padding: 5px;
+}
+/* Resumen */
+.resumen {
+    flex: 1;
+    background: #fff;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    height: fit-content;
+}
+.resumen h3 {
+    margin-top: 0;
+}
+.linea {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 0;
+}
+.total {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 15px;
+}
+/* Botones */
+.btn-amarillo {
+    background: #ffb400;
+    color: #000;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 3px;
+    margin-bottom: 10px;
+}
+.btn-negro {
+    background: #000;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 3px;
+}

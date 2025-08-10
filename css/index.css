@@ -1,0 +1,323 @@
+/* === HERO SECTION === */
+.hero {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 7rem 1.5rem;
+  color: white;
+  position: relative;
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 80vh;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.2); /* Más transparente para ver mejor la imagen */
+  z-index: 0;
+}
+
+.hero > * {
+  position: relative;
+  z-index: 1;
+}
+
+.hero h6 {
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  opacity: 0.9;
+  margin-bottom: 1rem;
+}
+
+.hero h1 {
+  font-size: 3.2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero p {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+  opacity: 0.95;
+}
+
+.hero .btn {
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  border-radius: 2rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: transform 0.2s ease;
+}
+
+.hero .btn:hover {
+  transform: scale(1.05);
+}
+
+
+/* === BOTÓN ROJO === */
+.btn-red {
+  background-color: #c0392b;
+  color: white;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.btn-red:hover {
+  background-color: #a93226;
+  color: white;
+}
+
+/* === REDES SECTION === */
+.redes {
+  background-color: #f8f9fa; /* más suave que blanco puro */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.redes .contenido {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+
+.redes img {
+  max-width: 180px;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.redes img:hover {
+  transform: scale(1.05);
+}
+
+.redes h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.redes p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  color: #555;
+}
+
+.redes .btn {
+  padding: 0.6rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 2rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: all 0.2s ease;
+}
+
+.redes .btn:hover {
+  transform: scale(1.05);
+}
+
+
+/* === PRODUCTO CARD === */
+.producto-card {
+  width: 100%;
+  max-width: 280px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+  background-color: #fff;
+  padding: 1.5rem;
+  margin: 0 auto;
+}
+
+.producto-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.producto-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.producto-card h5 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.producto-card p {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* === SWIPER === */
+.swiper {
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #c0392b;
+}
+
+.swiper-pagination-bullet {
+  background: #c0392b;
+}
+
+/* === MODAL PRODUCTO === */
+.modal-content {
+  border: none;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.modal-header {
+  padding: 1.5rem 1.5rem 0 1.5rem;
+}
+
+.modal-body {
+  padding: 0 1.5rem 1.5rem 1.5rem;
+}
+
+.modal .btn-close {
+  background-size: 1.2em;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+.modal .btn-close:hover {
+  opacity: 1;
+}
+
+.modal .img-fluid {
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.modal .img-fluid:hover {
+  transform: scale(1.02);
+}
+
+.modal .btn-outline-secondary {
+  border-color: #dee2e6;
+  color: #6c757d;
+  transition: all 0.2s ease;
+}
+
+.modal .btn-outline-secondary:hover {
+  background-color: #6c757d;
+  border-color: #6c757d;
+  color: white;
+}
+
+.modal .btn-outline-secondary:focus {
+  box-shadow: 0 0 0 0.2rem rgba(108, 117, 125, 0.25);
+}
+
+.modal .form-control {
+  border-color: #dee2e6;
+  font-weight: 500;
+}
+
+.modal .form-control:focus {
+  border-color: #c0392b;
+  box-shadow: 0 0 0 0.2rem rgba(192, 57, 43, 0.25);
+}
+
+.modal .btn-danger {
+  background-color: #c0392b;
+  border-color: #c0392b;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.modal .btn-danger:hover {
+  background-color: #a93226;
+  border-color: #a93226;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(192, 57, 43, 0.3);
+}
+
+/* === UTILIDADES ADICIONALES === */
+.display-6 {
+  font-size: 1.1rem;
+  font-weight: 300;
+}
+
+/* === RESPONSIVE HERO === */
+@media (max-width: 768px) {
+  .hero {
+    padding: 3rem 1rem;
+    min-height: 60vh;
+  }
+  
+  .hero h1 {
+    font-size: 2.2rem !important;
+    line-height: 1.2;
+  }
+  
+  .hero h6 {
+    font-size: 0.9rem !important;
+    margin-bottom: 0.75rem;
+  }
+  
+  .hero p {
+    font-size: 1rem !important;
+    margin-bottom: 1.5rem;
+  }
+  
+  .hero .btn {
+    padding: 0.6rem 1.5rem !important;
+    font-size: 0.9rem !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero {
+    padding: 2.5rem 1rem;
+    min-height: 50vh;
+  }
+  
+  .hero h1 {
+    font-size: 1.8rem !important;
+    line-height: 1.1;
+  }
+  
+  .hero h6 {
+    font-size: 0.8rem !important;
+    margin-bottom: 0.5rem;
+  }
+  
+  .hero p {
+    font-size: 0.9rem !important;
+    margin-bottom: 1.25rem;
+  }
+  
+  .hero .btn {
+    padding: 0.5rem 1.25rem !important;
+    font-size: 0.8rem !important;
+  }
+  
+  .display-3 {
+    font-size: 1.8rem;
+  }
+  
+  .display-5 {
+    font-size: 1.6rem;
+  }
+}
+
