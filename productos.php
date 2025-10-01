@@ -3,10 +3,10 @@ require_once 'config.php';
 
 $conn = getDBConnection();
 
-$sql = "SELECT p.id, p.nombre, p.comentarios, p.stock, p.vegetariano, p.tacc, p.precio, p.id_categoria, c.nombre AS categoria_nombre
+$sql = "SELECT p.id, p.nombre, p.descripcion, p.stock, p.vegetariano, p.tacc, p.precio, p.categoria_id, c.nombre AS categoria_nombre
         FROM productos p
-        LEFT JOIN categorias c ON p.id_categoria = c.id
-        ORDER BY p.id_categoria, p.nombre";
+        LEFT JOIN categorias c ON p.categoria_id = c.id
+        ORDER BY p.categoria_id, p.nombre";
 
 $result = $conn->query($sql);
 
@@ -18,11 +18,11 @@ if ($result->num_rows > 0) {
         $stockText = $row['stock'] > 0 ? 'Disponible' : 'Sin stock';
         
         echo '<div class="swiper-slide">';
-        echo '<div class="producto-card text-center mx-auto">';
+        echo '<div class="producto-card text-center mx-auto" style="max-height: 450px;">';
         echo '<img src="img/' . strtolower(str_replace(' ', '_', $row['nombre'])) . '.png" alt="' . $row['nombre'] . '" class="img-fluid mb-3" onerror="this.src=\'img/hamburguesa.png\'">';
         echo '<h5 class="fw-bold mb-2">' . $row['nombre'] . '</h5>';
         echo '<span class="badge bg-danger mb-2">Sale</span>';
-        echo '<p class="mb-3">' . $row['comentarios'] . '<br>$' . number_format($row['precio'], 0) . '</p>';
+        echo '<p class="mb-3">' . $row['descripcion'] . '<br>$' . number_format($row['precio'], 0) . '</p>';
         echo '<button class="btn btn-red w-100" onclick="abrirModal(' . $row['id'] . ')">Comprar</button>';
         echo '</div>';
         echo '</div>';

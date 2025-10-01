@@ -35,9 +35,15 @@ let productoActual = {};
 
 // Función para abrir el modal del producto
 function abrirModal(idProducto) {
+  console.log('Intentando abrir modal para producto ID:', idProducto);
+  
   fetch('obtener_producto.php?id=' + idProducto)
-    .then(response => response.json())
+    .then(response => {
+      console.log('Respuesta del servidor:', response);
+      return response.json();
+    })
     .then(data => {
+      console.log('Datos del producto:', data);
       if (data.error) {
         console.error('Error:', data.error);
         return;
@@ -70,7 +76,12 @@ function abrirModal(idProducto) {
       }
       
       // Mostrar modal
-      new bootstrap.Modal(document.getElementById("productoModal")).show();
+      console.log('Mostrando modal...');
+      const modalElement = document.getElementById("productoModal");
+      console.log('Elemento modal encontrado:', modalElement);
+      const modal = new bootstrap.Modal(modalElement);
+      modal.show();
+      console.log('Modal mostrado');
     })
     .catch(error => {
       console.error('Error al obtener producto:', error);

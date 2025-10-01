@@ -1,16 +1,6 @@
   <!-- Encabezado -->
   <?php include 'header.php' ?>
 
-  <!-- Modal -->
-<div class="modal fade" id="productoModal" tabindex="-1">
-  <div class="modal-dialog">
-    <div class="modal-content" id="modalContenido">
-      <!-- Contenido dinámico -->
-    </div>
-  </div>
-</div>
-
-
   <!-- Hero -->
   <section class="hero d-flex align-items-center justify-content-center text-center" style="background-image: url('img/fondo-buffet.png');">
     <div class="container">

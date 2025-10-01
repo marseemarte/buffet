@@ -128,6 +128,38 @@ body {
   right: -8px;
 }
 
+/* Resultados de búsqueda */
+#resultadosBusqueda {
+  max-height: 300px;
+  overflow-y: auto;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  background: white;
+  margin-top: 5px;
+  display: none;
+}
+
+#resultadosBusqueda.show {
+  display: block;
+}
+
+.resultado-item {
+  border: none !important;
+  border-bottom: 1px solid #f8f9fa !important;
+  padding: 0.75rem 1rem !important;
+  transition: background-color 0.2s ease;
+}
+
+.resultado-item:hover {
+  background-color: #f8f9fa !important;
+  color: #c0392b !important;
+}
+
+.resultado-item:last-child {
+  border-bottom: none !important;
+}
+
 /* Responsive adjustments */
 @media (max-width: 991.98px) {
   .navbar-collapse {
