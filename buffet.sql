@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 19-08-2025 a las 18:47:30
+-- Tiempo de generación: 01-10-2025 a las 04:22:43
 -- Versión del servidor: 9.1.0
 -- Versión de PHP: 8.3.14
 
@@ -31,7 +31,6 @@ DROP TABLE IF EXISTS `categorias`;
 CREATE TABLE IF NOT EXISTS `categorias` (
   `id` int NOT NULL AUTO_INCREMENT,
   `nombre` varchar(100) NOT NULL,
-  `descripcion` text,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
@@ -39,13 +38,13 @@ CREATE TABLE IF NOT EXISTS `categorias` (
 -- Volcado de datos para la tabla `categorias`
 --
 
-INSERT INTO `categorias` (`id`, `nombre`, `descripcion`) VALUES
-(1, 'Hamburguesas', NULL),
-(2, 'Milanesas', NULL),
-(3, 'Ensaladas', NULL),
-(4, 'Sandwiches', NULL),
-(5, 'Tartas', NULL),
-(6, 'Otros', NULL);
+INSERT INTO `categorias` (`id`, `nombre`) VALUES
+(1, 'Hamburguesas'),
+(2, 'Milanesas'),
+(3, 'Ensaladas'),
+(4, 'Sandwiches'),
+(5, 'Tartas'),
+(6, 'Otros');
 
 -- --------------------------------------------------------
 
@@ -132,7 +131,7 @@ CREATE TABLE IF NOT EXISTS `productos` (
   `descripcion` text,
   `precio` decimal(10,2) NOT NULL,
   `vegetariano` tinyint(1) DEFAULT '0',
-  `sin_tacc` tinyint(1) DEFAULT '0',
+  `tacc` tinyint(1) DEFAULT '0',
   `imagen` varchar(255) DEFAULT NULL,
   `stock` int DEFAULT '0',
   `creado_en` datetime DEFAULT CURRENT_TIMESTAMP,
@@ -144,18 +143,18 @@ CREATE TABLE IF NOT EXISTS `productos` (
 -- Volcado de datos para la tabla `productos`
 --
 
-INSERT INTO `productos` (`id`, `categoria_id`, `nombre`, `descripcion`, `precio`, `vegetariano`, `sin_tacc`, `imagen`, `stock`, `creado_en`) VALUES
-(1, 0, 'Hamburguesa Simple', 'Medallón de carne con pan', 1500.00, 0, 1, NULL, 20, '2025-08-19 15:43:58'),
-(2, 0, 'Hamburguesa Simple', 'Medallón de carne con pan', 1500.00, 0, 1, NULL, 20, '2025-08-19 15:44:24'),
-(3, 0, 'Hamburguesa con J&Q', 'Hamburguesa con jamón y queso', 1800.00, 0, 1, NULL, 15, '2025-08-19 15:44:24'),
-(4, 0, 'Hamburguesa Completa', 'Hamburguesa con jamón, queso, lechuga y tomate', 2000.00, 0, 1, NULL, 10, '2025-08-19 15:44:24'),
-(5, 0, 'Milanesa de Soja c/Guarnición', 'Milanesa de soja con guarnición de papas o ensalada', 1700.00, 1, 1, NULL, 12, '2025-08-19 15:44:24'),
-(6, 0, 'Sandwich de Milanesa', 'Sandwich con milanesa, lechuga y tomate', 1900.00, 0, 1, NULL, 14, '2025-08-19 15:44:24'),
-(7, 0, 'Ensalada LTZ', 'Lechuga, tomate y zanahoria rallada', 1200.00, 1, 1, NULL, 8, '2025-08-19 15:44:24'),
-(8, 0, 'Medialuna de J&Q', 'Medialuna rellena con jamón y queso', 800.00, 0, 1, NULL, 25, '2025-08-19 15:44:24'),
-(9, 0, 'Tostado', 'Tostado de jamón y queso', 900.00, 0, 1, NULL, 18, '2025-08-19 15:44:24'),
-(10, 0, 'Tarta de J&Q', 'Porción de tarta de jamón y queso', 1500.00, 0, 1, NULL, 10, '2025-08-19 15:44:24'),
-(11, 0, 'Tortilla de Papa', 'Tortilla de papa al horno', 1400.00, 1, 1, NULL, 9, '2025-08-19 15:44:24');
+INSERT INTO `productos` (`id`, `categoria_id`, `nombre`, `descripcion`, `precio`, `vegetariano`, `tacc`, `imagen`, `stock`, `creado_en`) VALUES
+(1, 1, 'Hamburguesa Simple', 'Medallón de carne con pan', 1500.00, 0, 0, NULL, 20, '2025-08-19 15:43:58'),
+(2, 1, 'Hamburguesa Lechuga y Tomate', 'Hamburguesa con lechuga y tomate', 3000.00, 0, 0, NULL, 20, '2025-08-19 15:44:24'),
+(3, 1, 'Hamburguesa con J&Q', 'Hamburguesa con jamón cocido y queso máquina', 1800.00, 0, 0, NULL, 15, '2025-08-19 15:44:24'),
+(4, 1, 'Hamburguesa Completa', 'Hamburguesa con jamón, queso, lechuga y tomate', 2000.00, 0, 0, NULL, 10, '2025-08-19 15:44:24'),
+(5, 0, 'Milanesa de Soja c/Guarnición', 'Milanesa de soja con guarnición de papas o ensalada', 1700.00, 1, 0, NULL, 12, '2025-08-19 15:44:24'),
+(6, 0, 'Sandwich de Milanesa', 'Sandwich con milanesa, lechuga y tomate', 1900.00, 0, 0, NULL, 14, '2025-08-19 15:44:24'),
+(7, 0, 'Ensalada LTZ', 'Lechuga, tomate y zanahoria rallada', 1200.00, 1, 0, NULL, 8, '2025-08-19 15:44:24'),
+(8, 0, 'Medialuna de J&Q', 'Medialuna rellena con jamón y queso', 800.00, 0, 0, NULL, 25, '2025-08-19 15:44:24'),
+(9, 0, 'Tostado', 'Tostado de jamón y queso', 900.00, 0, 0, NULL, 18, '2025-08-19 15:44:24'),
+(10, 0, 'Tarta de J&Q', 'Porción de tarta de jamón y queso', 1500.00, 0, 0, NULL, 10, '2025-08-19 15:44:24'),
+(11, 0, 'Tortilla de Papa', 'Tortilla de papa al horno', 1400.00, 1, 0, NULL, 9, '2025-08-19 15:44:24');
 
 -- --------------------------------------------------------
 
@@ -227,7 +226,23 @@ CREATE TABLE IF NOT EXISTS `reservas` (
   `creado_en` datetime DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   KEY `usuario_id` (`usuario_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Volcado de datos para la tabla `reservas`
+--
+
+INSERT INTO `reservas` (`id`, `usuario_id`, `fecha`, `hora`, `comentario`, `estado`, `creado_en`) VALUES
+(1, 2, '2025-10-05', '10:30:00', '', 'pendiente', '2025-09-30 14:25:00'),
+(2, 3, '2025-10-05', '12:00:00', '', 'aceptada', '2025-09-30 15:10:00'),
+(3, 4, '2025-10-06', '14:00:00', '', 'rechazada', '2025-09-30 16:00:00'),
+(4, 2, '2025-10-06', '18:00:00', '', 'pendiente', '2025-09-30 16:45:00'),
+(5, 3, '2025-10-07', '09:00:00', '', 'aceptada', '2025-09-30 17:20:00'),
+(6, 4, '2025-10-07', '20:30:00', '', 'pendiente', '2025-09-30 18:05:00'),
+(7, 2, '2025-10-08', '11:15:00', '', 'aceptada', '2025-09-30 18:30:00'),
+(8, 3, '2025-10-08', '15:45:00', '', 'rechazada', '2025-09-30 19:00:00'),
+(9, 4, '2025-10-09', '19:00:00', '', 'pendiente', '2025-09-30 19:25:00'),
+(10, 2, '2025-10-09', '21:00:00', '', 'aceptada', '2025-09-30 20:00:00');
 
 -- --------------------------------------------------------
 
@@ -244,7 +259,33 @@ CREATE TABLE IF NOT EXISTS `reserva_detalle` (
   PRIMARY KEY (`id`),
   KEY `reserva_id` (`reserva_id`),
   KEY `producto_id` (`producto_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Volcado de datos para la tabla `reserva_detalle`
+--
+
+INSERT INTO `reserva_detalle` (`id`, `reserva_id`, `producto_id`, `cantidad`) VALUES
+(1, 1, 3, 2),
+(2, 1, 5, 1),
+(3, 2, 1, 1),
+(4, 2, 7, 2),
+(5, 3, 4, 3),
+(6, 4, 2, 2),
+(7, 4, 6, 1),
+(8, 4, 8, 1),
+(9, 5, 1, 1),
+(10, 5, 9, 2),
+(11, 6, 10, 4),
+(12, 6, 2, 2),
+(13, 7, 5, 1),
+(14, 7, 11, 2),
+(15, 8, 6, 2),
+(16, 9, 7, 1),
+(17, 9, 8, 1),
+(18, 9, 3, 2),
+(19, 10, 4, 2),
+(20, 10, 9, 1);
 
 -- --------------------------------------------------------
 
